@@ -1,0 +1,14 @@
+= GoSecure's Presentation Material
+:title: GoSecure's Presentation Material
+:linkcss!:
+:sectids!:
+:twob: https://twitter.com/obilodeau
+:twtd: https://twitter.com/nyx__o
+
+NOTE: PDFs are a degraded experience over the linked (HTML) slide decks.
+
+OWASP Montreal January 2016::
+
+  * link:2016-01-20_owasp-mtl/internet-of-threats.html[Internet of {Things,Threats}]
+    by link:{twob}[Olivier Bilodeau] and ESET's link:{twtd}[Thomas Dupuy]
+    [ link:2016-01-20_owasp-mtl/internet-of-threats.pdf[PDF] ]
