@@ -1,0 +1,4 @@
+= GoSecure's Presentation Material
+
+This is the source doc and code of what is happening in the `gh-pages` branch
+which is rendered here: http://gosecure.github.io/presentations/
