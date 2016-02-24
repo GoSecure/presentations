@@ -10,4 +10,4 @@ This presentation was given at Confoo 2016 by [Philippe Arteau](https://github.c
 
 It was given in french but the slides and the demos are in english.
 
-[View Slides](https://docs.google.com/presentation/d/130n98LMDyD1xyZp5wzgmjmrZPP-nBcU9tI3NaOVfBs0/preview) | [Demos](https://github.com/GoSecure/presentations/tree/gh-pages/2016-02-24_confoo/demos) 
+[View Slides](https://docs.google.com/presentation/d/130n98LMDyD1xyZp5wzgmjmrZPP-nBcU9tI3NaOVfBs0/preview) | [Demos](https://github.com/GoSecure/presentations/tree/master/2016-02-24_confoo/demos)
