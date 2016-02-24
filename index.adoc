@@ -4,8 +4,15 @@
 :sectids!:
 :twob: https://twitter.com/obilodeau
 :twtd: https://twitter.com/nyx__o
+:twpa: https://twitter.com/h3xstream
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks.
+
+Confoo February 2016::
+
+  * https://docs.google.com/presentation/d/130n98LMDyD1xyZp5wzgmjmrZPP-nBcU9tI3NaOVfBs0/preview[Modern
+    XSS: Protections (and bypasses)] by link:{twpa}[Philippe Arteau]
+    [ https://github.com/GoSecure/presentations/tree/master/2016-02-24_confoo/demos[Demos] ]
 
 OWASP Montreal January 2016::
 
