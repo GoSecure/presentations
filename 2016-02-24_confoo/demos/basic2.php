@@ -1,0 +1,1 @@
+<img src="confoo.png" alt="<?php echo $_GET['name'];?>">
