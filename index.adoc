@@ -5,8 +5,19 @@
 :twob: https://twitter.com/obilodeau
 :twtd: https://twitter.com/nyx__o
 :twpa: https://twitter.com/h3xstream
+:lnlc: https://linkedin.com/in/lillygosec
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks.
+
+AtlSecCon April 2016::
+
+  * https://speakerdeck.com/lillypad/pe-file-structure-security-and-custom-base-64-steganography[Enumerating
+    PE File Structure Security Protections and Custom Base 64 Steganography]
+    by link:{lnlc}[Lilly Chalupowski] [
+    link:2016-04-07_atlseccon/PE_File_Security.pdf[PDF],
+    https://github.com/lillypad/badger[Badger project],
+    https://github.com/lillypad/chameleon[Chameleon project]
+    ]
 
 Confoo February 2016::
 
