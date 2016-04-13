@@ -21,6 +21,9 @@ AtlSecCon April 2016::
     by link:{twob}[Olivier Bilodeau] and ESET's link:{twtd}[Thomas Dupuy]
     [ link:2016-04-07_atlseccon/OlivierBilodeau_ThomasDupuy-Internet_of_Threats.pdf[PDF] ]
 
+  * https://docs.google.com/presentation/d/1yZWsLSgrOYJjeQwJWXUckvLi0hFyvPry-x1DgR_P30g/preview[The
+    new wave of Deserialization Bugs] by link:{twpa}[Philippe Arteau]
+
 Confoo February 2016::
 
   * https://docs.google.com/presentation/d/130n98LMDyD1xyZp5wzgmjmrZPP-nBcU9tI3NaOVfBs0/preview[Modern
