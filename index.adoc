@@ -17,7 +17,7 @@ AtlSecCon April 2016::
     https://github.com/lillypad/chameleon[Chameleon project]
     ]
 
-  * link:2016-04-atlseccon/internet-of-threats.html[Internet of {Things,Threats}]
+  * link:2016-04-07_atlseccon/internet-of-threats.html[Internet of {Things,Threats}]
     by link:{twob}[Olivier Bilodeau] and ESET's link:{twtd}[Thomas Dupuy]
     [ link:2016-04-07_atlseccon/OlivierBilodeau_ThomasDupuy-Internet_of_Threats.pdf[PDF] ]
 
