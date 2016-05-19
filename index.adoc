@@ -4,8 +4,15 @@
 :sectids!:
 :twob: https://twitter.com/obilodeau
 :twtd: https://twitter.com/nyx__o
+:twhg: https://twitter.com/hugospns
 :twpa: https://twitter.com/h3xstream
 :lnlc: https://linkedin.com/in/lillygosec
+
+NorthSec 2016::
+
+  * link:2016-05-19_northsec/malboxes.html[Applying DevOps Principles for Better Malware Analysis]
+    by link:{twob}[Olivier Bilodeau] and link:{twhg}[Hugo Genesse]
+    [ link:2016-05-19_northsec/OlivierBilodeau_HugoGenesse-Malboxes.pdf[PDF] ]
 
 AtlSecCon April 2016::
 
