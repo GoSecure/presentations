@@ -3,10 +3,35 @@
 :linkcss!:
 :sectids!:
 :twob: https://twitter.com/obilodeau
+:twpa: https://twitter.com/h3xstream
+:twmcpc: https://twitter.com/MasarahClouston
 :twtd: https://twitter.com/nyx__o
 :twhg: https://twitter.com/hugospns
-:twpa: https://twitter.com/h3xstream
 :lnlc: https://linkedin.com/in/lillygosec
+:twib: https://twitter.com/Corb3nik
+
+Botconf 2016::
+
+  * https://www.botconf.eu/wp-content/uploads/2016/11/PR08-MOOSE-BILODEAU-PAQUET-CLOUSTON.pdf[
+    Attacking Linux/Moose 2.0 Unraveled an EGO MARKET]
+    by link:{twmcpc}[Masarah Paquet-Clouston] and link:{twob}[Olivier Bilodeau]
+
+HackFest 2016::
+
+  * https://docs.google.com/presentation/d/18y60Xy0eVeUnBXIH_t3ikfly_uyYbtfI6zAuKCHtlac/edit?usp=sharing[
+    Abusing PHP 7's OPcache to Spawn Webshells]
+    by link:{twib}[Ian Bouchard]
+    [ https://www.youtube.com/watch?v=yLpsIWh7rvU[video] ]
+
+BlackHat Europe 2016::
+
+  * https://www.blackhat.com/docs/eu-16/materials/eu-16-Paquet-Clouston-Ego-Market_When-Greed-for-Fame-Benefits-Large-Scale-Botnets.pdf[
+    EGO MARKET: When Greed For Fame Benefits Large-Scale Botnets]
+    by link:{twmcpc}[Masarah Paquet-Clouston] and link:{twob}[Olivier Bilodeau]
+    [ https://www.youtube.com/watch?list=PLH15HpR5qRsXcnfTOLOA3yYSd0CmYwOHS&v=9pmKj0P9_ow[video],
+    http://gosecure.net/2016/11/02/exposing-the-ego-market-the-cybercrime-performed-by-the-linux-moose-botnet/[blog post],
+    http://gosecure.net/wp-content/uploads/2016/11/Ego-Market_When-Greed-for-Fame-Benefits-Large-Scale-Botnets.pdf[paper]
+    ]
 
 NorthSec 2016::
 
