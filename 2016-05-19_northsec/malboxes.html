@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><title>Applying DevOps Principles for Better Malware Analysis</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/neutral.css" id="theme" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h1>Applying DevOps Principles for Better Malware Analysis</h1><p><small></small></p></section><section id="_olivier_obilodeau"><h2>Olivier (@obilodeau)</h2><div class="ulist"><ul><li><p>Cybersecurity Researcher at GoSecure <span class="image right"><img src="images/gosecure.png" alt="gosecure" width="300" /></span></p></li><li><p>Previously</p><div class="ulist"><ul><li><p>Malware Researcher at ESET</p></li><li><p>Infosec lecturer at ETS University in Montreal</p></li><li><p>Infosec developer, network admin, linux system admin</p></li></ul></div></li><li><p>Co-founder Montrehack (hands-on security workshops) <span class="image right"><img src="images/nsec.png" alt="nsec" width="150" /></span></p></li><li><p>VP Training and Hacker Jeopardy at NorthSec</p></li></ul></div></section>
+<section id="_hugo_hugospns"><h2>Hugo (@hugospns)</h2><div class="ulist"><ul><li><p>Computer engineering student @ PolyMTL <span class="image right"><img src="images/polyhack.png" alt="polyhack" width="200" /></span></p></li><li><p>Director @ PolyHack</p></li><li><p>Co-chapter leader (Audio, Recording and Streaming) @ OWASP Montreal
+<span class="image right"><img src="images/owasp.jpg" alt="owasp" width="200" /></span></p></li><li><p>Member of Jose Fernandez&#8217;s SecSI lab @ PolyMTL</p></li><li><p>Vulnerability Research Intern @ Wurldtech</p></li><li><p>Former Intern @ ESET</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>queue: cyber joke</p></div></aside></section>
+<section id="_agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>Why?</p></li><li><p>What?</p></li><li><p>Where?</p></li><li><p>Say whaat!?</p></li></ul></div></section>
+<section id="_demo"><h2>Demo</h2><div class="ulist"><ul><li><p><a href="https://asciinema.org/a/4qnqka18av0uvikiqrbpf1jbx?speed=4">Our demo</a></p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>wait for it, it takes a while&#8230;&#8203;</p></li><li><p>Hugo, do you want to say something?</p></li></ul></div></aside></section>
+<section id="_questions"><h2>Questions?</h2><div class="listingblock oversize2"><div class="content"><pre class="highlight"><code>@obilodeau
+@hugospns</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_why" data-background="#000000"><h2>Why?</h2></section>
+<section id="_context"><h2>Context</h2><div class="videoblock"><div class="content"><iframe width="800" height="600" src="https://www.youtube.com/embed/kZH9JtPBq7k?rel=0&amp;start=34" frameborder="0" allowfullscreen=""></iframe></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>this is how we do malware analysis</p></li><li><p>manual</p></li><li><p>needs a lot of resources (lab full of ppl)</p></li><li><p>relatively boring</p></li><li><p>yet very impressive</p></li><li><p>but ppl like gosecure can&#8217;t afford that</p></li></ul></div></aside></section>
+<section id="_current_toolchain_customization"><h2>Current toolchain (customization)</h2><div class="ulist"><ul><li><p>Vanilla XP VMs (or more recent versions)</p></li><li><p>No trace of a previous user</p></li><li><p>Manual customization</p></li><li><p>Can lead to cross-infected VMs</p></li><li><p>Can&#8217;t build or reuse templates</p></li><li><p>Also time consuming</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Hugo</p></div></aside></section>
+<section id="_the_90_s_called_and_they_want_their_methodology_back"><h2>The 90&#8217;s called and they want their methodology back</h2><div class="imageblock" style=""><div class="content"><img src="images/web_surfing_time.gif" alt="web surfing time" /></div></div>
+<aside class="notes"><div class="paragraph"><p>Hugo</p></div></aside></section>
+<section id="_problems_of_malware_analysis"><h2>Problems of malware analysis</h2><div class="ulist"><ul><li><p>Not accessible to newcomers</p></li><li><p>Easy to mess things up</p></li><li><p>Team work is hard (tools don&#8217;t encourage it)</p></li><li><p>Building a credible environment is time consuming</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>afraid to infect themselves</p></li></ul></div></aside></section>
+<section id="_ways_to_mess_things_up"><h2>Ways to mess things up</h2><div class="imageblock" style=""><div class="content"><img src="images/good_job_eset_cropped.png" alt="good job eset cropped" /></div></div>
+<aside class="notes"><div class="paragraph"><p>lack of integrated/enforced best practices can lead to leaks</p></div></aside></section>
+<section id="_also_dealing_with_vm_problems"><h2>Also, dealing with VM problems</h2><div class="videoblock"><div class="content"><iframe width="600" height="500" src="https://www.youtube.com/embed/LaApqL4QjH8?rel=0&amp;start=3" frameborder="0" allowfullscreen=""></iframe></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>requires skill</p></li><li><p>time consuming</p></li><li><p>why don&#8217;t we simply destroy / re-create</p></li></ul></div></aside></section>
+<section id="_analysis_detection"><h2>Analysis Detection</h2><div class="ulist"><ul><li><p>Malware is doing analysis detection</p></li><li><p>Anti-VMs like red pill, sldt instruction</p><div class="ulist"><ul><li><p>Not reliable on multicore systems or when acceleration is deactivated.</p></li></ul></div></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li><li><p>virtualization in companies</p></li></ul></div></aside></section>
+<section id="_analysis_detection_cont"><h2>Analysis Detection (cont.)</h2><div class="ulist"><ul><li><p>Anti-debugging</p><div class="ulist"><ul><li><p>Debugger plugins</p></li></ul></div></li><li><p>System fingerprinting</p><div class="ulist"><ul><li><p>What is really available ?</p></li></ul></div></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_one_shot_one_kill"><h2>One shot, one kill</h2><div class="ulist"><ul><li><p>One chance to get noticed as interesting or else its too late</p><div class="ulist"><ul><li><p>Your IP could be banned</p></li></ul></div></li><li><p>Has to be credible</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_what" data-background="#000000"><h2>What?</h2></section>
+<section id="_devops"><h2>DevOps</h2><div class="paragraph"><p>Why would the devops people have all the fun?</p></div>
+<div class="imageblock" style=""><div class="content"><img src="images/devops.gif" alt="devops" /></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>Devops changed traditional IT</p></li><li><p>No one is looking back</p></li><li><p>But besides linux servers, no one else is doing it</p></li></ul></div></aside></section>
+<section id="_devops_cont"><h2>DevOps (cont.)</h2><div class="ulist"><ul><li><p>Core principle: Infrastructure as code</p></li><li><p>Reproducible</p></li><li><p>Throw-away</p></li><li><p>Efficient</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_inspiration"><h2>Inspiration</h2><div class="videoblock"><div class="content"><iframe width="800" height="600" src="https://www.youtube.com/embed/JamZi-WVJ_s?rel=0&amp;start=57" frameborder="0" allowfullscreen=""></iframe></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>This machine builds railroads</p></li><li><p>This guy is just supervising it</p></li><li><p>checking emails, smartphone, etc.</p></li><li><p>We built something like that machine for malware analysis</p></li></ul></div></aside></section>
+<section id="_architecture"><h2>Architecture</h2><div class="ulist"><ul><li><p>Reusing existing devops tools</p><div class="ulist"><ul><li><p>packer: machine image builder</p></li><li><p>vagrant: configure reproducible operating environments</p></li><li><p>WinRM: Windows Remote Management</p></li></ul></div></li></ul></div></section>
+<section id="_shoulder_of_giants"><h2>Shoulder of giants</h2><div class="ulist"><ul><li><p>2 years ago this wasn&#8217;t possible</p></li><li><p>Borrowed some configs from Mark Andrew Dwyer&#8217;s <a href="https://github.com/m-dwyer/packer-malware">packer-malware</a></p></li><li><p>Chocolatey</p></li><li><p>Hashicorp tools and community</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>Vagrant / Packer were simply not there</p></li><li><p>whom we credit in README</p></li><li><p>its just that no one doing malware analysis cared before</p></li></ul></div></aside></section>
+<section id="_efficiency"><h2>Efficiency</h2><div class="ulist"><ul><li><p>Tools automatically installed based on profiles</p><div class="ulist"><ul><li><p>all sysinternal tools</p></li><li><p>windbg</p></li><li><p>putty</p></li><li><p>fiddler</p></li><li><p>wireshark</p></li></ul></div></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>only limited by your imagination (or chocolatey packages)</p></li></ul></div></aside></section>
+<section id="_dealing_with_vm_problems"><h2>Dealing with VM problems</h2><div class="imageblock" style=""><div class="content"><img src="images/train-tunnel.gif" alt="train tunnel" /></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>you have a problem</p></li><li><p>you restart from scratch</p></li><li><p>or you plow through it</p></li></ul></div></aside></section>
+<section id="_malware_in_context"><h2>Malware in context</h2><div class="ulist"><ul><li><p>Malware behaves differently in different contexts</p></li><li><p>You know the target of the APT you are tracking and you want to fool them</p></li><li><p>In as little time as possible</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_use_cases" data-background="#000000"><h2>Use Cases</h2></section>
+<section id="_win32_syndicasec"><h2>Win32/Syndicasec</h2><div class="ulist"><ul><li><p>Manual recon</p></li><li><p>Lists:</p><div class="ulist"><ul><li><p>Last opened files</p></li><li><p>Directories</p></li><li><p>What&#8217;s on the Desktop</p></li><li><p>Systeminfo</p><div class="ulist"><ul><li><p>Useful for: User, install date, hardware info</p></li></ul></div></li></ul></div></li></ul></div></section>
+<section id="_operation_fingerprinting"><h2>Operation Fingerprinting</h2><div class="ulist"><ul><li><p>UNC / Shared drives fingerprinting</p></li><li><p>Active Directory fingerprinting</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_team_analysis"><h2>Team analysis</h2><div class="paragraph"><p>Left as an exercise to the reader</p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>just a matter of pulling the right vagrant commands together</p></li><li><p>have your Vagrantfile in git</p></li><li><p>share your git tree and vagrant boxes</p></li><li><p>someone can clone your analysis git tree and vagrant up your analysis</p></li></ul></div></aside></section>
+<section id="_how_can_i_get_this" data-background="#000000"><h2>How can I get this?</h2></section>
+<section id="_anti_vaporware_statement"><h2>Anti-Vaporware Statement</h2><div class="listingblock oversize130"><div class="content"><pre class="highlight"><code>git clone https://github.com/GoSecure/malboxes.git</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Olivier</p></li><li><p>so tired of this sh*tty trend in infosec conferences!</p></li><li><p>released even before our talk</p></li><li><p>encourage you to do so</p></li></ul></div></aside></section>
+<section id="_how_does_it_work"><h2>How does it work?</h2><div class="ulist"><ul><li><p>You use malboxes.py to build a profile</p></li><li><p>Then it builds a <code>vagrant box</code> for you</p></li><li><p>And you spin a <code>Vagrantfile</code> for each of your analysis</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_available_commands"><h2>Available commands</h2><div class="ulist"><ul><li><p>Registry - Modifies the Windows Registry (add, modify, delete)</p></li><li><p>Document - Add or delete a file</p></li><li><p>Directory - Add or delete a directory</p></li><li><p>Package - Adds a Chocolatey package to install</p></li><li><p>Build - Build the virtualbox image</p></li><li><p>Spin - Create a <code>Vagrantfile</code> for your analysis case</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo</p></li></ul></div></aside></section>
+<section id="_result"><h2>Result</h2><aside class="notes"><div class="paragraph"><p>Olivier let&#8217;s look at the output</p></div></aside></section>
+<section id="_useful_for"><h2>Useful for</h2><div class="ulist"><ul><li><p>Reduce art, augment science</p></li><li><p>Get new people into malware analysis</p></li><li><p>Improve workflow of seasoned analyst/teams</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>olivier</p></li><li><p>Cattle vs Kittens: stop caring about our VMs</p></li></ul></div></aside></section>
+<section id="_where" data-background="#000000"><h2>Where?</h2></section>
+<section id="_where_is_this_headed"><h2>Where is this headed?</h2><div class="ulist"><ul><li><p>Implement anti VM-detection tricks</p></li><li><p>Higher level constructs to build interesting targets</p><div class="ulist"><ul><li><p>Active Directory integration</p></li><li><p>Generate random honeydocs based on a theme</p></li></ul></div></li><li><p>Document a proper team workflow</p></li><li><p>It&#8217;s all in <code>TODO.adoc</code></p></li><li><p>Join the fun!</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>olivier</p></li></ul></div></aside></section>
+<section id="_let_s_get_to_work"><h2>Let&#8217;s get to work!</h2><div class="imageblock" style=""><div class="content"><img src="images/fast-train.gif" alt="fast train" /></div></div>
+<aside class="notes"><div class="paragraph"><p>if we want a fighting chance against the bad guys
+we need to stop losing time on shenanigans</p></div></aside></section>
+<section id="_thanks"><h2>Thanks!</h2><div class="ulist"><ul><li><p>Joan Calvet for tips and help</p></li><li><p>Marc-Etienne M. Leveille for suggestions and link to Olivier</p></li><li><p>Jurriaan Bremer for help with VMCloak</p></li><li><p>Jose Fernandez and the lab team for tips and sponsorship</p></li><li><p>Jessy Campos for pushing me</p></li><li><p>My family, friends and girlfriend for support</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Hugo: &#8230;&#8203;</p></li><li><p>Olivier: and I&#8217;m thankful to no one</p></li></ul></div></aside></section>
+<section id="_questions_2"><h2>Questions?</h2><div class="imageblock" style=""><div class="content"><img src="images/train-loop.gif" alt="train loop" /></div></div>
+<div class="listingblock oversize130"><div class="content"><pre class="highlight"><code>@obilodeau
+@hugospns</code></pre></div></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'neutral',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'none',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'slide',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.01,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 2,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>

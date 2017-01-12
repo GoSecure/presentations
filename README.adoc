@@ -1,4 +1,8 @@
 = GoSecure's Presentation Material
 
-This is the source doc and code of what is happening in the `gh-pages` branch
-which is rendered here: http://gosecure.github.io/presentations/
+== How to add references
+
+Make sure you have `asciidoctor` installed: `gem install asciidoctor`
+
+. Modify `index.adoc` with your favorite editor
+. Render it: `asciidoctor index.adoc`

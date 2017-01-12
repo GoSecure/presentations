@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="author" content="Olivier Bilodeau, &lt;obilodeau@gosecure.ca&gt;" /><title>Applying DevOps Principles for Better Malware Analysis</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/gosecure.css" id="theme" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script><link rel="stylesheet" href="malboxes-botconf.css" /></head><body><div class="reveal"><div class="slides"><section class="title" data-background-size="contain" data-background-image="images/title-slide-bg.jpg" data-background-color="#ffffff"><h1>Applying DevOps Principles for Better Malware Analysis</h1><p class="author"><small>Olivier Bilodeau, &lt;obilodeau@gosecure.ca&gt;</small></p></section><section id="__whoami"><h2>$ whoami</h2><div class="ulist"><ul><li><p>Security Researcher at GoSecure <span class="image right"><img src="images/nsec.png" alt="nsec" width="150" /></span></p></li><li><p>NorthSec Exec</p></li><li><p>The Linux/Moose talk guy</p></li></ul></div></section>
+<section id="_malboxes" class="topic" data-background-color="#df3e34"><h2>Malboxes</h2></section>
+<section id="_problems_of_malware_analysis"><h2>Problems of malware analysis</h2><div class="ulist"><ul><li><p>Not accessible to newcomers</p></li><li><p>Easy to mess things up (get infected)</p></li><li><p>Building an environment is guess work</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>afraid to infect themselves</p></li><li><p>you careful craft your own VM for malware analysis and rely on snapshots</p></li></ul></div></aside></section>
+<section id="_current_malware_analysis_toolchain"><h2>Current malware analysis toolchain</h2><div class="ulist"><ul><li><p>Vanilla Win 7 VMs (or more recent versions)</p></li><li><p>No trace of a previous user</p></li><li><p>Manual installation of numerous tools</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>ollydbg</p></li><li><p>wireshark</p></li><li><p>fiddler</p></li><li><p>sysinternal tools</p></li></ul></div></aside></section>
+<section id="_consequences"><h2>Consequences</h2><div class="ulist"><ul><li><p>Can lead to cross-infected VMs</p></li><li><p>Can&#8217;t build or reuse templates</p></li><li><p>Time consuming</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Since you have one, you tend to keep it for a while</p></div></aside></section>
+<section id="_why"><div class="videoblock stretch"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/kZH9JtPBq7k?rel=0&amp;start=34" frameborder="0" allowfullscreen="" data-autoplay=""></iframe></div>
+<aside class="notes"><div class="ulist"><ul><li><p>So what problem are we trying to solve?</p></li><li><p>this is how we maintain malware analysis machines</p></li><li><p>manual</p></li><li><p>needs a lot of resources (lab full of ppl)</p></li><li><p>relatively boring</p></li><li><p>yet very impressive</p></li><li><p>but ppl like gosecure or biz w/o dedicated RE staff can&#8217;t afford that</p></li></ul></div></aside></section>
+<section id="_the_90_s_called_and_they_want_their_methodology_back"><h2>The 90&#8217;s called and they want their methodology back</h2><div class="imageblock stretch" style=""><img src="images/malboxes/web_surfing_time.gif" alt="web surfing time" height="100%" /></div></section>
+<section id="_what_can_we_change" class="topic" data-background-color="#df3e34"><h2>What can we change?</h2></section>
+<section id="_inspiration"><h2>Inspiration</h2><div class="videoblock stretch"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/JamZi-WVJ_s?rel=0&amp;start=57" frameborder="0" allowfullscreen="" data-autoplay=""></iframe></div>
+<aside class="notes"><div class="ulist"><ul><li><p>This machine builds railroads</p></li><li><p>This guy is just supervising it</p></li><li><p>checking emails, smartphone, etc.</p></li><li><p>We built something like that machine for malware analysis</p></li></ul></div></aside></section>
+<section id="_shoulder_of_giants"><h2>Shoulder of giants</h2><div class="paragraph"><p>2 years ago this wasn&#8217;t possible&#8230;&#8203;</p></div>
+<div class="paragraph"><p>But now it is, thanks to DevOps tools!</p></div>
+<div class="ulist"><ul><li><p>Packer, Vagrant</p></li><li><p>Chocolatey</p></li><li><p>WinRM, PowerShell</p></li></ul></div></section>
+<section id="_how_can_i_get_this" class="topic" data-background-color="#df3e34"><h2>How can I get this?</h2></section>
+<section id="_pip"><div class="listingblock center oversize120"><div class="content"><pre class="highlight"><code>pip3 install git+https://github.com/GoSecure/malboxes.git#egg=malboxes</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>open source on github</p></li><li><p>pip installable: Win, Linux and Mac OS X</p></li></ul></div></aside></section>
+<section id="_how_does_it_work"><h2>How does it work?</h2><div class="ulist"><ul><li><p>Build a profile</p></li><li><p>You will have a <code>vagrant box</code> (your base VM)</p></li><li><p>Spin a <code>Vagrantfile</code> for each of your analysis</p></li><li><p>Use Vagrant to manage VMs afterwards</p></li></ul></div>
+<aside class="notes">take a coffee or catch-up with emails</aside></section>
+<section id="_you_can"><h2>You can</h2><div class="ulist"><ul><li><p>Share your prebuilt box in same company</p></li><li><p>Use trial versions of Windows for instant analysis!</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>almost anyone can start doing malware analysis safely now</p></div></aside></section>
+<section id="_result"><h2>Result</h2><div class="videoblock stretch"><video src="images/malboxes/malboxes-faster-speed-run.mp4" width="100%" height="100%" data-autoplay="" controls="">Your browser does not support the video tag.</video></div></section>
+<section id="_useful_for"><h2>Useful for</h2><div class="ulist"><ul><li><p>Reduce art, augment science</p></li><li><p>Get new people into malware analysis</p></li><li><p>Improve workflow of seasoned analyst/teams</p></li></ul></div></section>
+<section id="_quoting_cern"><h2>Quoting CERN</h2><div class="imageblock stretch" style=""><img src="images/malboxes/CERN_Data_Centre_Evolution.png" alt="CERN Data Centre Evolution" height="100%" /></div>
+<aside class="notes"><div class="ulist"><ul><li><p>analogie viens apparamment de microsoft</p></li><li><p>fr: animaux domestiques vs bétail</p></li></ul></div></aside></section>
+<section id="_blog_post_soon" class="topic" data-background-color="#df3e34"><h2>Blog post soon!</h2><div class="ulist"><ul><li><p><a href="http://gosecure.net/blog/" class="bare">http://gosecure.net/blog/</a></p></li><li><p>@obilodeau</p></li><li><p><a href="https://github.com/GoSecure/malboxes/" class="bare">https://github.com/GoSecure/malboxes/</a></p></li></ul></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: false,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'gosecure',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'none',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'slide',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.01,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 4,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
