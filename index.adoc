@@ -34,6 +34,8 @@ BlackHat Europe 2016::
     http://gosecure.net/wp-content/uploads/2016/11/Ego-Market_When-Greed-for-Fame-Benefits-Large-Scale-Botnets.pdf[paper]
     ]
 
+// TODO SecTor
+
 44Con 2016::
 
   * Workshop: Hunting Linux Malware for Fun and $flags
