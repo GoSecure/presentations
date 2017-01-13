@@ -16,6 +16,7 @@ Botconf 2016::
   * https://www.botconf.eu/wp-content/uploads/2016/11/PR08-MOOSE-BILODEAU-PAQUET-CLOUSTON.pdf[
     Attacking Linux/Moose 2.0 Unraveled an EGO MARKET]
     by link:{twmcpc}[Masarah Paquet-Clouston] and link:{twob}[Olivier Bilodeau]
+    [ https://youtu.be/xPT0TRBzwcg[video] ]
 
 HackFest 2016::
 
