@@ -23,6 +23,7 @@ Botconf 2016::
     Attacking Linux/Moose 2.0 Unraveled an EGO MARKET]
     by link:{twmcpc}[Masarah Paquet-Clouston] and link:{twob}[Olivier Bilodeau]
     [ https://youtu.be/xPT0TRBzwcg[video] ]
+  * Lightning Talk: link:2016-12-01_botconf/malboxes.html[Malboxes] by link:{twob}[Olivier Bilodeau]
 
 HackFest 2016::
 
