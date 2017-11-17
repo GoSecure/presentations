@@ -11,6 +11,11 @@
 :twib: https://twitter.com/Corb3nik
 :twml: https://twitter.com/marc_etienne_
 
+HackFest 2017::
+
+  * link:2017-11-04_hackfest/OlivierBilodeau-lessons_learned_hunting_iot_malware.pdf[
+    Lessons Learned Hunting Internet of Things Malware]
+    by link:{twob}[Olivier Bilodeau]
 
 Montréal JUG - Janvier 2017::
 
