@@ -17,6 +17,12 @@ HackFest 2017::
     Lessons Learned Hunting Internet of Things Malware]
     by link:{twob}[Olivier Bilodeau]
 
+  * link:2017-11-04_hackfest_alphabay/Beating_the_disinformation_drift_Alphabay_Hackfest2017.pdf[Beating the Disinformation Drift Facts about the AlphaBay Market]
+    by link:{twmcpc}[Masarah Paquet-Clouston]
+
+  * link:2017-11-04_hackfest_static_analysis/Hackfest2017-Static_Analysis.pdf[Static-Analysis: Now you’re playing with power]
+    by link:{twpa}[Philippe Arteau]
+
 Montréal JUG - Janvier 2017::
 
   * https://gosecure.github.io/presentations/2017-01-11_jugmtl/PhilippeArteau_SecuriteJava2017.pdf[La sécurité Java en 2017]
