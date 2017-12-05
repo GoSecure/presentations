@@ -11,6 +11,11 @@
 :twib: https://twitter.com/Corb3nik
 :twml: https://twitter.com/marc_etienne_
 
+Confoo Vancouver 2017::
+
+  * link:2017-12-04-confoo/Bypassing_Modern_XSS_Protections.pdf[Modern XSS: The modern protections (and bypasses) v.2.0]
+    by link:{twpa}[Philippe Arteau]
+
 HackFest 2017::
 
   * link:2017-11-04_hackfest/OlivierBilodeau-lessons_learned_hunting_iot_malware.pdf[
