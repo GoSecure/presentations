@@ -11,6 +11,12 @@
 :twib: https://twitter.com/Corb3nik
 :twml: https://twitter.com/marc_etienne_
 
+
+Hack In Paris 2019::
+
+  * link:2019-06-19-hack_in_paris/HIP2019-Advanced_XXE_Exploitation.pdf[Advanced XXE Exploitation] Workshop Exercises : link:2019-06-19-hack_in_paris/Exercise_1_simple.pdf[[1]], link:2019-06-19-hack_in_paris/Exercise_2_external_dtd.pdf[[2]], link:2019-06-19-hack_in_paris/Exercise_3_php_encoding.pdf[[3]], link:2019-06-19-hack_in_paris/Exercise_4_jar_proto.pdf[[4]], link:2019-06-19-hack_in_paris/Exercise_5_local_dtd.pdf[[5]]
+    by link:{twpa}[Philippe Arteau]
+
 Confoo Vancouver 2017::
 
   * link:2017-12-04-confoo/Bypassing_Modern_XSS_Protections.pdf[Modern XSS: The modern protections (and bypasses) v.2.0]
