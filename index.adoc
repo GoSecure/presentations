@@ -17,6 +17,26 @@ Hack In Paris 2019::
   * link:2019-06-19-hack_in_paris/HIP2019-Advanced_XXE_Exploitation.pdf[Advanced XXE Exploitation] Workshop Exercises : link:2019-06-19-hack_in_paris/Exercise_1_simple.pdf[[1]], link:2019-06-19-hack_in_paris/Exercise_2_external_dtd.pdf[[2]], link:2019-06-19-hack_in_paris/Exercise_3_php_encoding.pdf[[3]], link:2019-06-19-hack_in_paris/Exercise_4_jar_proto.pdf[[4]], link:2019-06-19-hack_in_paris/Exercise_5_local_dtd.pdf[[5]]
     by link:{twpa}[Philippe Arteau]
 
+Confoo Montreal 2019::
+
+  * link:2019-02-26-confoo_mtl/Cache_Me_If_You_Can.pdf[Cache Me If You Can: Exposing your application using caching features]
+    by link:{twpa}[Philippe Arteau]
+
+44Con 2018::
+
+  * link:2018-09-13-44con/ML_to_the_rescue_of_code_review.pdf[Machine Learning to the rescue of code review]
+    by link:{twpa}[Philippe Arteau]
+
+Atl Sec Con 2018::
+
+  * link:2018-05-17-atlseccon/Machine_Learning_Workshop.pdf[Machine Learning Workshop: Orange is the new Hack]
+    by link:{twpa}[Philippe Arteau]
+
+Confoo Montreal 2018::
+
+  * link:2018-03-18-confoo_mtl/Security_boot_camp_for_.NET_developers_Confoo_v2.pdf[Security boot camp for .NET developers]
+    by link:{twpa}[Philippe Arteau]
+
 Confoo Vancouver 2017::
 
   * link:2017-12-04-confoo/Bypassing_Modern_XSS_Protections.pdf[Modern XSS: The modern protections (and bypasses) v.2.0]
