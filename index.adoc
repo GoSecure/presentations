@@ -14,6 +14,10 @@
 
 == 2019
 
+CERT-EU 2019::
+
+* link:2019-11-06_cert-eu/Olivier_Bilodeau_Masarah_Paquet-Clouston_-_Behind_the_Scenes_The_Industry_of_Social_Media_Manipulation_Driven_by_Malware.pdf[Behind The Scenes: The Industry Of Social Media Manipulation Driven By Malware] by link:{twob}[Olivier Bilodeau] & link:{twmcpc}[Masarah Paquet-Clouston]
+
 SecTor 2019::
 
 * link:https://archives.sector.ca/presentations19/2019_Olivier_Bilodeau__Masarah-C_Paquet-Clouston_-_Behind_the_Scenes_The_Industry_of_Social_Media_Manipulation_Driven_by_Malware.pdf[Behind The Scenes: The Industry Of Social Media Manipulation Driven By Malware] [ https://sector.ca/sessions/behind-the-scenes-the-industry-of-social-media-manipulation-driven-by-malware/[video] ] by link:{twob}[Olivier Bilodeau] & link:{twmcpc}[Masarah Paquet-Clouston]
