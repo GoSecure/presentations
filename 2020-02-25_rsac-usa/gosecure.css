@@ -1,0 +1,56 @@
+.reveal section.title h1 {
+	margin-top: 6em;
+	text-align: right;
+	color: white;
+}
+.reveal section.title h2 {
+	color: white;
+	text-align: right;
+	font-size: 1.2em;
+}
+/* author */
+.reveal section.title p {
+	margin-top: 0.8em;
+	text-align: right;
+	font-weight: bold;
+	color: white;
+}
+
+.reveal section.topic h2 {
+	margin-top: 2.5em;
+	font-size: 3em;
+}
+
+.reveal section.has-dark-background h2,
+.reveal section.has-dark-background h3,
+.reveal section.has-dark-background li,
+.reveal section.has-dark-background p {
+	color: white;
+}
+
+.reveal section ul li img {
+  margin: 0 0 -7px 0;
+}
+
+.oversize120 {
+  zoom: 120%;
+}
+.oversize150 {
+  zoom: 150%;
+}
+.oversize200 {
+  zoom: 200%;
+}
+.oversize250 {
+  zoom: 250%;
+}
+.oversize300 {
+  zoom: 300%;
+}
+.oversize400 {
+  zoom: 400%;
+}
+
+.columns .slide-content > .column.is-left-aligned {
+  text-align: left;
+}

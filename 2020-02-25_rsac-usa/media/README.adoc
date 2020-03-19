@@ -1,0 +1,4 @@
+= README
+
+* numbers-drop.mp4 and whiteboard.mp4 are under the Pixabay license which
+  authorizes this use and distribution
