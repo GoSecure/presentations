@@ -12,6 +12,7 @@
 :twml: https://twitter.com/marc_etienne_
 :twfl: https://twitter.com/L3houx
 
+NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
 == 2020
 
@@ -172,4 +173,3 @@ OWASP Montreal January 2016::
     by link:{twob}[Olivier Bilodeau] and ESET's link:{twtd}[Thomas Dupuy]
     [ link:2016-01-20_owasp-mtl/internet-of-threats.pdf[PDF] ]
 
-NOTE: PDFs are a degraded experience over the linked (HTML) slide decks.
