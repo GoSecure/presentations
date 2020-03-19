@@ -20,7 +20,7 @@ RSAC USA 2020::
 
 * link:2020-02-25_rsac-usa/malboxes-findsecbugs-pyrdp.html[GoSecure's Open Source Contributions to Malware Analysis, Code Hardening and RDP Snooping]
   by link:{twob}[Olivier Bilodeau]
-  [ link:2020-02-25_rsac-usa/Olivier_Bilodeau_-_More_than_Free_Schwag_-_GoSecure_Open_Source_Contributions_to_Malware_Analysis_Code_Hardening_and_RDP_Snooping.pdf[PDF] ]
+  [ link:2020-02-25_rsac-usa/Olivier_Bilodeau_-\_More_than_Free_Schwag_-_GoSecure_Open_Source_Contributions_to_Malware_Analysis_Code_Hardening_and_RDP_Snooping.pdf[PDF] ]
 
 == 2019
 
