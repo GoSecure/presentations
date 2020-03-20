@@ -60,6 +60,13 @@ Hack In Paris 2019::
   * link:2019-06-19-hack_in_paris/HIP2019-Advanced_XXE_Exploitation.pdf[Advanced XXE Exploitation] Workshop Exercises : link:2019-06-19-hack_in_paris/Exercise_1_simple.pdf[[1]], link:2019-06-19-hack_in_paris/Exercise_2_external_dtd.pdf[[2]], link:2019-06-19-hack_in_paris/Exercise_3_php_encoding.pdf[[3]], link:2019-06-19-hack_in_paris/Exercise_4_jar_proto.pdf[[4]], link:2019-06-19-hack_in_paris/Exercise_5_local_dtd.pdf[[5]]
     by link:{twpa}[Philippe Arteau]
 
+NorthSec 2019::
+
+  * https://docs.google.com/presentation/d/1avcn8Sh2b3IE7AA0G9l7Cj5F1pxqizUm98IbXUo2cvY/[Welcome to the Jumble: Improving RDP Tooling for Malware Analysis and Pentesting]
+  [ https://youtu.be/5JztJzi-m48[Video demo 1], https://youtu.be/bU67tj1RkMA[Video demo 2],
+  link:2019-05-16-northsec/Improving_RDP_Tooling_for_Malware_Analysis_and_Pentesting.pdf[PDF]]
+  by https://twitter.com/xshill_[Francis Labelle] and https://twitter.com/res260[Émilio Gonzalez]
+
 Atl Sec Con 2019::
 
   * link:2019-04-29_atlseccon/History_of_Deserialization_v2.2.pdf[History of Deserialization]
