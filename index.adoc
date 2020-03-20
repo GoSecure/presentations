@@ -42,11 +42,23 @@ OWASP Global AppSec DC 2019::
 
  * link:2019-09-12-appsecglobaldc/OWASP_Find-Security_Bugs.pdf[OWASP Find Security Bugs: The community static code analyzer] by link:{twpa}[Philippe Arteau]
 
+
+DerbyCon 2019::
+
+  * link:https://docs.google.com/presentation/d/1UAiN2EZwDcmBjLe_t5HXB0LzbNclU3nnigC-XM4neIU/[Welcome to the Jumble: Improving RDP Tooling for Malware Analysis and Pentesting]
+  [ link:2019-09-08-derbycon/Improving_RDP_Tooling_for_Malware_Analysis_and_Pentesting.pdf[PDF] ]
+  by https://twitter.com/xshill_[Francis Labelle] and https://twitter.com/res260[Émilio Gonzalez]
+
+BlackHat 2019::
+
+  * https://docs.google.com/presentation/d/17P_l2n-hgCehQ5eTWilru4IXXHnGIRTj4ftoW4BiX5A/[Arsenal Presentation: PyRDP - Python 3 Remote Desktop Protocol Man-in-the-Middle (MITM) and Library]
+  [ link:2019-08-06-blackhat_usa/PyRDP-Remote_Desktop_Protocol_Man-In-The-Middle.pdf[PDF] ]
+  by https://twitter.com/xshill_[Francis Labelle] and https://twitter.com/res260[Émilio Gonzalez]
+
 Hack In Paris 2019::
 
   * link:2019-06-19-hack_in_paris/HIP2019-Advanced_XXE_Exploitation.pdf[Advanced XXE Exploitation] Workshop Exercises : link:2019-06-19-hack_in_paris/Exercise_1_simple.pdf[[1]], link:2019-06-19-hack_in_paris/Exercise_2_external_dtd.pdf[[2]], link:2019-06-19-hack_in_paris/Exercise_3_php_encoding.pdf[[3]], link:2019-06-19-hack_in_paris/Exercise_4_jar_proto.pdf[[4]], link:2019-06-19-hack_in_paris/Exercise_5_local_dtd.pdf[[5]]
     by link:{twpa}[Philippe Arteau]
-
 
 Atl Sec Con 2019::
 
