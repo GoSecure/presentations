@@ -16,6 +16,10 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2020
 
+NorthSec 2020::
+
+* link:2020-05-unicode-northsec/unicode_v3_northsec.pdf[Unicode vulnerabilities that could byͥte you] by link:{twpa}[Philippe Arteau]
+
 RSAC USA 2020::
 
 * link:2020-02-25_rsac-usa/malboxes-findsecbugs-pyrdp.html[GoSecure's Open Source Contributions to Malware Analysis, Code Hardening and RDP Snooping]
