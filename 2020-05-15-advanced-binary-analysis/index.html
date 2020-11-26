@@ -55,11 +55,8 @@
 </ul>
 <aside class="warning"><p><strong>For NorthSec 2020 Attendants</strong> If you prefer to work online, visit <a href="https://advanced-binary-analysis.gosec.co" target="_blank">https://advanced-binary-analysis.gosec.co</a> to spawn an online environment. You will still need Ghidra installed locally, and you will need to download any file that you want to keep at the end of the workshop. The online environment requires authentication with GitHub OAuth.</p>
 </aside>
-<p>Once everything is installed and functional, import the docker image and start an instance of the container:</p>
-<pre><code>    mkdir ~/ABA &amp;&amp; cd ~/ABA
-    wget https://nsec2020.nyc3.digitaloceanspaces.com/docker.tar.gz.zip
-    unzip -P &#39;eJ@SbPIqZcpY#PGZ^PqN#JuG%pF42Z2VBq1zDOUEKRJIw#h&#39; docker.tar.gz.zip &amp;&amp; rm docker.tar.gz.zip
-    docker image load -i docker.tar.gz
+<p>Once the docker image is built, start an instance of the container with:</p>
+<pre><code>
     docker run --name aba-workshop -p8888:8888 -v$(pwd):/home/joyvan/host -it advanced-binary-analysis
 </code></pre>
 <p>This will spawn a persistent container instance named <code>aba-workshop</code> and map your current directory to the container at <code>/host</code> so that you can easily share files. You can then navigate to <code>http://localhost:8888</code> using the access token from your terminal to access the lab environment.</p>
