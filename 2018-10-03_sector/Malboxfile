@@ -1,0 +1,15 @@
+client:
+  os: windows7_64
+  # product_key: abcd-efgh-ijkl
+  network: fakenet
+  defender: false
+  windows_updates: false
+  packages: [wireshark, x64dbg.portable, sysinternal]
+  powershell:
+  - script1.ps1: [with, arguments]
+  domain: example.com
+
+server:
+  os: windows_server_2016
+  defender: true
+  domain: example.com

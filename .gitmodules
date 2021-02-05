@@ -18,3 +18,7 @@
 	path = 2020-02-25_rsac-usa/reveal.js
 	url = https://github.com/GoSecure/reveal.js.git
 	branch = gosecure-2020-revealjs-3.9
+[submodule "2018-10-03_sector/reveal.js"]
+	path = 2018-10-03_sector/reveal.js
+	url = https://github.com/GoSecure/reveal.js.git
+	branch = gosecure-2020-revealjs-3.9

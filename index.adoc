@@ -83,6 +83,13 @@ Confoo Montreal 2019::
 
 == 2018
 
+SecTor 2018::
+
+* link:2018-10-03_sector/Malboxes-Make-Malware-Analysis-More-Accessible.html[Malboxes: Make Malware Analysis More Accessible]
+  [ link:2018-10-03_sector/OlivierBilodeau-Make-Malware-Analysis-More-Accessible.pdf[PDF],
+    https://sector.ca/sessions/malboxes-make-malware-analysis-more-accessible/[Video Recording] ]
+  by link:{twob}[Olivier Bilodeau]
+
 44Con 2018::
 
   * link:2018-09-13-44con/ML_to_the_rescue_of_code_review.pdf[Machine Learning to the rescue of code review]
