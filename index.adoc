@@ -14,10 +14,25 @@
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
+== 2021
+
+OWASP Toronto::
+
+* link:2021-02-unicode-owasp-toronto/philippe_arteau_owasp_unicode_v4.pdf[Unicode vulnerabilities that could byͥte you (New version)] [link:https://www.youtube.com/watch?v=ZbVqHx8cznw[video]] by link:{twpa}[Philippe Arteau]
+
 == 2020
+
+December #GoSecureGift::
+
+* link:https://gosecure.github.io/xxe-workshop/[Advanced XXE Workshop] by link:{twpa}[Philippe Arteau]
+
+Hackfest 2020::
+
+* link:https://gosecure.github.io/template-injection-workshop/[Template Injection in Action] [link:https://www.youtube.com/watch?v=I7xQZOvZzIw[video]] by link:{twpa}[Philippe Arteau]
 
 NorthSec 2020::
 
+* link:2020-05-15-advanced-binary-analysis/[Advanced Binary Analysis] by link:{twpa}[Alexandre Beaulieu]
 * link:2020-05-unicode-northsec/unicode_v3_northsec.pdf[Unicode vulnerabilities that could byͥte you] by link:{twpa}[Philippe Arteau]
 
 RSAC USA 2020::
