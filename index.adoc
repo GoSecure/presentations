@@ -176,11 +176,16 @@ BlackHat Europe 2016::
 44Con 2016::
 
   * Workshop: Hunting Linux Malware for Fun and $flags
-    by link:{twml}[Marc-Etienne M.Léveillé] and link:{twob}[Olivier Bilodeau] [ https://videos.44con.com/187676320[video] ]
+    by link:{twml}[Marc-Etienne M.Léveillé] and link:{twob}[Olivier Bilodeau]
+    [ https://www.youtube.com/watch?v=hmmM3d0GvV8[recent video],
+      https://videos.44con.com/187676320[original video] now offline ]
   * Workshop: Advanced Java Application Code Review
-    by link:{twpa}[Philippe Arteau] [ https://videos.44con.com/187676319[video] ]
+    by link:{twpa}[Philippe Arteau]
+    [ https://github.com/GoSecure/44con-code-review-workshop[sources],
+      https://github.com/GoSecure/44con-code-review-workshop/blob/master/44CON-Advanced_Java_Code_Review_Cheat_Sheet.pdf[slides],
+      https://videos.44con.com/187676319[original video] now offline ]
   * Malboxes Lightning Talk (22 minutes)
-    by link:{twob}[Olivier Bilodeau] [ https://videos.44con.com/185322203[video] ]
+    by link:{twob}[Olivier Bilodeau] [ https://vimeo.com/255370804[video] ]
 
 NorthSec 2016::
 
