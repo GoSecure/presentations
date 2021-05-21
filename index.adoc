@@ -16,6 +16,10 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2021
 
+NorthSec::
+
+* link:2021-05-request-smuggling-101/RequestSmuggling101.pdf[Request Smuggling 101] by link:{twpa}[Philippe Arteau]
+
 OWASP Toronto::
 
 * link:2021-02-unicode-owasp-toronto/philippe_arteau_owasp_unicode_v4.pdf[Unicode vulnerabilities that could byͥte you (New version)] [link:https://www.youtube.com/watch?v=ZbVqHx8cznw[video]] by link:{twpa}[Philippe Arteau]
