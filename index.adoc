@@ -11,10 +11,15 @@
 :twib: https://twitter.com/Corb3nik
 :twml: https://twitter.com/marc_etienne_
 :twfl: https://twitter.com/L3houx
+:twmob: https://twitter.com/mo_bergeron
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
 == 2021
+
+HackFest::
+
+* link:2021-11_sql-injection-is-still-alive/Marc_Olivier_Bergeron-SQL_Injection_Is_Still_Alive-From_a_Malls_Interactive_Terminal_to_AWS_WAF_Bypass.pdf[SQL Injection Is Still Alive - From a Mall's Interactive Terminal to AWS WAF Bypass] by link:{twmob}[Marc Olivier Bergeron]
 
 NorthSec::
 
