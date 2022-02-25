@@ -14,6 +14,13 @@
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
+
+== 2022
+
+
+
+* link:2022-02-25-confoo-privacy/Privacy_pitfalls_for_your_web_application.pdf[Privacy pitfalls for your web application] by link:{twpa}[Philippe Arteau]
+
 == 2021
 
 NorthSec::
