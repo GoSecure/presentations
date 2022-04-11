@@ -12,13 +12,22 @@
 :twml: https://twitter.com/marc_etienne_
 :twfl: https://twitter.com/L3houx
 :twmob: https://twitter.com/mo_bergeron
+:twlu: https://twitter.com/_lubiedo
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
 
 == 2022
 
-* link:2022-02-25-confoo-privacy/Privacy_pitfalls_for_your_web_application.pdf[Privacy pitfalls for your web application] by link:{twpa}[Philippe Arteau]
+AtlSecCon::
+
+  * link:2022-04-08_atlseccon/obilodeau-lubiedo-Risks-of-RDP-AtlSecCon2022.pdf[The Risks of RDP and How to Mitigate Them]
+  by link:{twob}[Olivier Bilodeau] and link:{twlu}[Lisandro Ubiedo]
+
+Confoo::
+
+  * link:2022-02-25-confoo-privacy/Privacy_pitfalls_for_your_web_application.pdf[Privacy pitfalls for your web application] by link:{twpa}[Philippe Arteau]
+
 
 == 2021
 
