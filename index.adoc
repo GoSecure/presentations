@@ -18,8 +18,6 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2022
 
-
-
 * link:2022-02-25-confoo-privacy/Privacy_pitfalls_for_your_web_application.pdf[Privacy pitfalls for your web application] by link:{twpa}[Philippe Arteau]
 
 == 2021
@@ -27,6 +25,11 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 Intent Summit::
 
 * link:https://gosecure.github.io/request-smuggling-workshop/[Introduction to Request Smuggling (Workshop)] by link:{twpa}[Philippe Arteau]
+
+BlackHat USA::
+
+  * link:2021-08-05_blackhat-usa/BlackHat-USA-21-Arsenal-PyRDP-OlivierBilodeau.pdf[PyRDP: Remote Desktop Protocol Monster-in-the-Middle (MITM)]
+  by link:{twob}[Olivier Bilodeau]
 
 HackFest::
 
