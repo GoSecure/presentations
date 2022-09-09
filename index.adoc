@@ -20,6 +20,18 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2022
 
+GoSec::
+
+  * link:2022-09_gosec/OlivierBilodeau_MasarahClouston-Social_Media_Manipulation-Update_2022.pdf[Research Outlook: What has not changed with Social Media Manipulation Driven by Malware?]
+    by link:{twmcpc}[Masarah Paquet-Clouston] and link:{twob}[Olivier Bilodeau]
+  * link:2022-09_gosec/Understanding_Password_to_Improve_Protection_Andreanne-Bergeron.pdf[Hackers Get Your Data Through Weak Passwords Practices: Understanding Why and How to Improve Password Protection]
+    by link:{liab}[Andréanne Bergeron]
+  * link:2022-09_gosec/OlivierBilodeau-Workshop-Attacking-RDP.pdf[Workshop: Attacking the Remote Desktop Protocol]
+    by link:{twob}[Olivier Bilodeau]
+  * link:2022-09_gosec/OlivierBilodeau-Workshop-Botnet_Network_Data_Analysis_Using_Open-Source_Tools.pdf[Workshop: Malicious Network Data Analysis Using Open-Source Tools]
+    by link:{twob}[Olivier Bilodeau]
+
+
 NorthSec::
 
   * link:2022-05_northsec/andreanne-bergeron_Tell-me-where-you-live-and-I-will-tell-your-Password.pdf[Tell Me Where You Live And I Will Tell Your P@ssw0rd: Understanding The Macrosocial Factors Influencing Password's strength]
