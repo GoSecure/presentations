@@ -20,6 +20,12 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2022
 
+SecTor::
+
+  * link:2022-10-06_sector/OlivierBilodeau-Purple_RDP.pdf[Purple RDP: Red and Blue Tradecraft around the Remote Desktop Protocol]
+    by link:{twob}[Olivier Bilodeau]
+
+
 BSides Montreal::
 
   * link:2022-09-10_bsides-mtl/Offenders_Vs_non-offenders_passwords-AndreanneBergeron-BsidesMontreal.pdf[You Are Your Password: Understanding How Your Network and Interests Influence Your Password's Creation Strategy]
