@@ -20,6 +20,20 @@ NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when ava
 
 == 2022
 
+Human Factor in Cybercrime::
+
+  * link:2022-11_hfc/Offender_VS_non-offender_Password_HFC2022_Andreanne_Bergeron.pdf[Identifying Offenders Through their Passwords: The Similarity and Difference Between Network of Users]
+    by link:{liab}[Andréanne Bergeron]
+
+
+////
+Americain Society of Criminology::
+
+  * link:2022-11_asc/Offender_VS_non-Offender_ASC2022_Andreanne_Bergeron.pdf[A Password Strategy Taxonomy to Reveal the Difference Between Offender and Non-Offender Strategies]
+    by link:{liab}[Andréanne Bergeron]
+////
+
+
 HackFest::
 
   * link:2022-10-30_hackfest/AndreanneBergeron-Offenders_Password-FR.pdf[Se fait hacker qui croyait hacker: L'analyse des mots de passe des pirates informatiques] (in French)
