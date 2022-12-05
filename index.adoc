@@ -26,12 +26,10 @@ Human Factor in Cybercrime::
     by link:{liab}[Andréanne Bergeron]
 
 
-////
 Americain Society of Criminology::
 
   * link:2022-11_asc/Offender_VS_non-Offender_ASC2022_Andreanne_Bergeron.pdf[A Password Strategy Taxonomy to Reveal the Difference Between Offender and Non-Offender Strategies]
     by link:{liab}[Andréanne Bergeron]
-////
 
 
 HackFest::
