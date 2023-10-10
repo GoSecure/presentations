@@ -17,6 +17,13 @@
 
 NOTE: PDFs are a degraded experience over the linked (HTML) slide decks when available.
 
+== 2023
+
+BSides Augusta::
+
+  * link:2023-10-07_bsides-augusta/obilodeau_From-DND-to-RDP-Unparalleled-Attacker-Monitoring.pdf[From RDP To D&D: Unparalleled Remote Desktop Monitoring Reveal Attackers' Tradecraft]
+    by link:{twob}[Olivier Bilodeau]
+
 
 == 2022
 
